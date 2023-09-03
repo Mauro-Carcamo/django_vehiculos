@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% csrf_token %}
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-center mt-5">
+            <h1>Listado de vehiculos</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Serial carroceria</th>
+                        <th>Serial motor</th>
+                        <th>Categoria</th>
+                        <th>Precio</th>
+
+                        <th>Condicion de precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vehiculo in vehiculos %}
+                    <tr>
+                        <td>{{vehiculo.marca}}</td>
+                        <td>{{vehiculo.modelo}}</td>
+                        <td>{{vehiculo.serial_carroceria}}</td>
+                        <td>{{vehiculo.serial_motor}}</td>
+                        <td>{{vehiculo.categoria}}</td>
+                        <td>{{vehiculo.precio}}</td>
+                        <td class=" text-center">{{vehiculo.condicion_precio}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

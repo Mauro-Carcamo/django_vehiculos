@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-3 mb-2 bg-secondary text-white">
+<div class="container  m-5 pt-5">
+    <div class="row justify-content-center">
+
+        <form   class="row"  method="POST">
+            {% csrf_token %}
+            
+            <div class="col-12">
+                <label for="exampleInputEmail1" class="form-label">Marca</label>
+                {{form.marca}}
+            </div>
+            <div class="col-12 justify-content-center">
+                <label for="exampleInputEmail1" class="form-label">Categoria</label>
+                {{form.categoria}}
+            </div>
+            <div class="col-12">
+                <label for="exampleInputEmail1" class="form-label">Modelo</label>
+                {{form.modelo}}
+            </div>
+            <div class="col-12">
+                <label for="exampleInputEmail1" class="form-label">Serial Carroceria</label>
+                {{form.serial_carroceria}}
+            </div>
+
+            <div class="col-12">
+                <label for="exampleInputEmail1" class="form-label">Serial Motor</label>
+                {{form.serial_motor}}
+            </div>
+
+            <div class="col-12">
+                <label for="exampleInputEmail1" class="form-label">Precio</label>
+                {{form.precio}}
+            </div>
+
+            <div class="col-12 offset-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}
